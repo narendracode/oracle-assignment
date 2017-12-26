@@ -36,4 +36,4 @@ RUN mkdir -p /data/db
 
 ADD target/oracle-assignment-0.0.1-SNAPSHOT.jar oracle-assignment-0.0.1-SNAPSHOT.jar
 EXPOSE 8080
-ENTRYPOINT ["sh", "-c", "java -Djava.security.egd=file:/dev/./urandom -jar /oracle-assignment-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["sh", "-c", "java -Djava.security.egd=file:/dev/./urandom -jar oracle-assignment-0.0.1-SNAPSHOT.jar"]
