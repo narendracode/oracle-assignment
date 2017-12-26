@@ -1,4 +1,3 @@
-[![Build Status](https://travis-ci.org/narendrasoni1989/springboot-microservice.svg?branch=master)](https://travis-ci.org/narendrasoni1989/springboot-microservice)
 
 
 To build the package :
