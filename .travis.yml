@@ -1,0 +1,28 @@
+sudo: required
+
+services:
+  - docker
+  - mongodb
+
+before_install:
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+  - sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+  - sudo apt-get update
+  - sudo apt-get -y install docker-ce
+
+language: java
+jdk:
+ - oraclejdk8
+
+
+after_success:
+  - docker login -u narendrasoni1989 -p $DOCKER_PASSWORD
+  - docker build --tag narendrasoni1989/oracle-assignment .
+  - docker push narendrasoni1989/oracle-assignment
+
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: echo "Deployment Successful."
+  on:
+    branch: ["master"]
